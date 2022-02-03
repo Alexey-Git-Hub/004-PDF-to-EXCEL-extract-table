@@ -1,0 +1,35 @@
+
+
+pip3 install camelot-py[cv] tabula-py
+
+
+error:
+    raise OSError(
+OSError: Ghostscript is not installed. You can install it using the instructions here: https://camelot-py.readthedocs.io/en/master/user/install-deps.html
+solve:
+    /*
+    https://camelot-py.readthedocs.io/en/master/user/install-deps.html
+    https://camelot-py.readthedocs.io/en/master/user/install-deps.html#windows
+        not working href
+    https://www.ghostscript.com/
+    */
+    https://www.ghostscript.com/releases/gsdnld.html
+    download and install Ghostscript 9.55.0 for Windows (32 bit)
+    https://stackoverflow.com/questions/53319099/python-camelot-error-ghostscriptnotfound-while-it-is-installed
+        Adding both the "bin" and "lib" paths for Ghostscript to the PATH worked for me:
+        C:\Program Files\gs\gs9.26\bin
+        C:\Program Files\gs\gs9.26\lib
+    https://github.com/atlanhq/camelot/issues/282
+    https://github.com/atlanhq/camelot/issues/282#issuecomment-877872954
+        tables = camelot.read_pdf("foo.pdf", backend="poppler")
+     WORKED!!!
+
+
+
+
+
+
+
+
+
+
